@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Лабораторная 2.1</title>
+	<meta charset=utf-8 />
+
+	<style type="text/css">
+		* {
+			margin:0;
+			padding:0;
+			outline:none;
+		}
+		.page {
+			width:400px;
+			margin:0 auto;
+			min-height:300px;
+			border:1px dotted #000;
+			border-radius:5px;
+		}
+	</style>
+	
+</head>
+<body>
+    <script>
+	var i = 2;
+	var image = "img/s";
+	var image3 = ".gif"
+	function animation() {
+	    document.animate.src = image + i + image3;
+	    if (i == 12) i = 1;
+	    i++;
+		
+	}
+    </script>
+    
+    
+    <div class="page">
+	    <img name="animate" src="img/s1.gif" onLoad="setTimeout(animation, 200)">
+    </div>
+</body>
+</html>
