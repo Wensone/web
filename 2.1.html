@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Лабораторная работа 2.1</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript">
+
+		function set_image(){
+			var tmp = document.img1.src;
+			document.img1.src = document.img2.src;
+			document.img2.src = tmp;
+		}
+
+	</script>
+</head>
+<body>
+	<img name="img1" src="img/r1.gif" />
+	<img name="img2" src="img/r2.gif" />
+	<form>
+	    <input type="button" value="set_image" onClick="set_image()">
+	</form>
+</body>
+</html>
