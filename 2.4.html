@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+	<TITLE>Лабораторная 2.4</TITLE>
+	<SCRIPT>
+		var t;
+		
+		hPic = new Image();
+		hPic.src = "img/ris.jpg";
+		
+		function EnlargePic(){
+			clearTimeout(t);
+			var d = document.myImage;
+			
+			if (d.width < 600 || d.height < 600){
+				d.width++;
+				d.height++;
+				d.src = hPic.src;
+				t = setTimeout("EnlargePic()", 20);
+			}
+		}
+		
+		function ReducePic(){
+			clearTimeout(t);
+			var d = document.myImage;
+			
+			if (d.width > 500 || d.height > 372){
+				d.width--;
+				d.height--;
+				d.src = hPic.src;
+				t = setTimeout("ReducePic()", 20);
+			}
+		}
+	</SCRIPT>	
+</HEAD>
+<BODY>
+	<IMG SRC="img/ris.jpg" NAME="myImage" onMouseOver="EnlargePic()" onMouseOut="ReducePic()"> 
+</BODY>
+</HTML>
