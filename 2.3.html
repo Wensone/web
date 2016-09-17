@@ -4,15 +4,15 @@
 	<meta charset="utf-8" />
 	<script>
 		var Num=0;
-		
+
 		function NumImage(Arg){
 			Num=Arg;
 		}
-		
+
 		function Setting(object){
-			object.src="r"+Num+".gif";
+			object.src="img/r"+Num+".gif";
 		}
-	</script>	
+	</script>
 </head>
 
 <body>
@@ -20,13 +20,13 @@
 	<img SRC="img/r2.gif" name="Pic_2" width=90 height=160 border=2 onClick="NumImage(2)">
 	<img SRC="img/r3.gif" name="Pic_3" width=90 height=160 border=2 onClick="NumImage(3)">
 	<img SRC="img/r4.gif" name="Pic_4" width=90 height=160 border=2 onClick="NumImage(4)">
-	
+
 	<table BORDER=0>
 		<tr>
 			<td WIDTH=90 HEIGHT=160> <img SRC="img/r0.gif" onClick="Setting(this)"></td>
 			<td WIDTH=90 HEIGHT=160 ><img SRC="img/r0.gif" onClick="Setting(this)"></td>
 		</tr>
-		
+
 		<tr>
 			<td WIDTH=90 HEIGHT=160> <img SRC="img/r0.gif" onClick="Setting(this)"></td>
 			<td WIDTH=90 HEIGHT=160> <img SRC="img/r0.gif" onClick="Setting(this)"></td>
