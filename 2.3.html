@@ -12,6 +12,12 @@
 		function Setting(object){
 			object.src="img/r"+Num+".gif";
 		}
+		function cl() {
+			document.p1.src = "img/r0.gif";
+			document.p2.src = "img/r0.gif";
+			document.p3.src = "img/r0.gif";
+			document.p4.src = "img/r0.gif";
+		}
 	</script>
 </head>
 
@@ -23,13 +29,18 @@
 
 	<table BORDER=0>
 		<tr>
-			<td WIDTH=90 HEIGHT=160> <img SRC="img/r0.gif" onClick="Setting(this)"></td>
-			<td WIDTH=90 HEIGHT=160 ><img SRC="img/r0.gif" onClick="Setting(this)"></td>
+			<td WIDTH=90 HEIGHT=160> <img name="p1" SRC="img/r0.gif" onClick="Setting(this)"></td>
+			<td WIDTH=90 HEIGHT=160> <img name="p2" SRC="img/r0.gif" onClick="Setting(this)"></td>
 		</tr>
 
 		<tr>
-			<td WIDTH=90 HEIGHT=160> <img SRC="img/r0.gif" onClick="Setting(this)"></td>
-			<td WIDTH=90 HEIGHT=160> <img SRC="img/r0.gif" onClick="Setting(this)"></td>
+			<td WIDTH=90 HEIGHT=160> <img name="p3" SRC="img/r0.gif" onClick="Setting(this)"></td>
+			<td WIDTH=90 HEIGHT=160> <img name="p4" SRC="img/r0.gif" onClick="Setting(this)"></td>
+		</tr>
+		<tr>
+			<td rowspan="2">
+				<input type="button" name="clear_img" value="Clear table" onClick="cl()">
+			</td>
 		</tr>
 	</table>
 </body>
