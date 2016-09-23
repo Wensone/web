@@ -17,24 +17,56 @@
 			border-radius:5px;
 		}
 	</style>
-	
+
 </head>
 <body>
     <script>
 	var i = 2;
 	var image = "img/s";
 	var image3 = ".gif"
+    var decay = 200;
+    var id = 0;
+    function load() {
+        if (id == 0)
+        id = setInterval(animation, decay);
+    }
+    function down() {
+        if (id != 0) {
+            clearInterval(id);
+            decay += 30;
+            id = setInterval(animation, decay);
+        }
+    }
+    function up() {
+        if (id != 0) {
+            clearInterval(id);
+            decay -= 30;
+            id = setInterval(animation, decay);
+        }
+
+    }
+    function stop() {
+        clearInterval(id);
+        id = 0;
+    }
 	function animation() {
 	    document.animate.src = image + i + image3;
 	    if (i == 12) i = 1;
 	    i++;
-		
+
 	}
     </script>
-    
-    
-    <div class="page">
-	    <img name="animate" src="img/s1.gif" onLoad="setTimeout(animation, 200)">
+
+
+    <div>
+        <input type="button" value="start" onclick="load()" />
+        <input type="button" value="stop" onclick="stop()" />
+        <input type="button" value="+" onclick="up()" />
+        <input type="button" value="-" onclick="down()" />
     </div>
+    <div class="page">
+	    <img name="animate" src="img/s1.gif" onLoad="id">
+    </div>
+
 </body>
 </html>
