@@ -1,0 +1,36 @@
+	<META charset="utf-8">
+	<html>
+	<head>
+		<script type="text/javascript">
+			var img = 0;
+
+			function getNum(Num){
+				img = Num;
+			}
+
+			function setImage(name){
+				if (img == 0)
+					return;
+				name.src= "r" + img + ".gif";
+				img = 0;
+			}
+		</script>
+	</head>
+	<body>
+		<h2 style="position: relative; left: 200px">Собери мозаику!</h2>
+		<img name="r1" src="r1.gif" style="position:relative; top:0px; left:100px;" onclick="getNum(1)">
+		<img name="r2" src="r2.gif" style="position:relative; top:0px; left:100px;" onclick="getNum(2)">
+		<img name="r3" src="r3.gif" style="position:relative; top:0px; left:100px;" onclick="getNum(3)">
+		<img name="r4" src="r4.gif" style="position:relative; top:0px; left:100px;" onclick="getNum(4)">
+		<table border=1 style="position: relative; top:10px; left:200px">
+			<tr>
+				<td><img name="t1" src="r0.gif" onclick="setImage(t1)"></td>
+				<td><img name="t2" src="r0.gif" onclick="setImage(t2)"></td>
+			</tr>
+			<tr>
+				<td><img name="t3" src="r0.gif" onclick="setImage(t3)"></td>
+				<td><img name="t4" src="r0.gif" onclick="setImage(t4)"></td>
+			</tr>	
+		</table>
+	</body>
+	</html>

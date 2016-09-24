@@ -1,0 +1,18 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function set_image() {
+			var tmp = document.img1.src;
+			document.img1.src = document.img2.src;
+			document.img2.src = tmp;
+		}
+	</script>
+</head>
+<body>
+	<img name="img1" src="r1.gif">
+	<img name="img2" src="r2.gif">
+	<FORM name="form1">
+		<input type="button" value="Switch" onClick="set_image()">
+	</FORM>
+</body>
+</html>

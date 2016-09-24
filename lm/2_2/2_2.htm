@@ -1,0 +1,55 @@
+<html>
+<head>
+	<style type = "text/css">
+		* {
+			width: 400px;
+			margin: auto;
+			padding: 8px;
+		}
+	</style>
+	<script>
+		var i = 1;
+		var speed = 200;
+		var idTimer;
+		function animation() {
+			document.animate.src = "s" + i + ".gif";
+			if (i >= 12) 
+				i = 0;
+			i++;
+		}
+
+		function faster() {
+			if (speed > 50)
+				speed -= 10;
+		}
+
+		function slower() {
+			if (speed < 1000)
+				speed += 10;
+		}
+
+		function start() {
+			idTimer = setTimeout(animation, speed);
+		}
+
+		function loading() {
+			idTimer = setTimeout(animation, speed);
+		}
+	</script>
+</head>
+<body>
+	<img name="animate" src="s1.gif" onLoad="loading()">
+	<FORM name="Faster">
+		<input type="button" value="Faster" onClick="faster()">
+	</FORM>
+	<FORM name="Slower">
+		<input type="button" value="Slower" onClick="slower()">
+	</FORM>
+	<FORM name="Stop">
+		<input type="button" value="Stop" onClick="clearTimeout(idTimer)">
+	</FORM>
+	<FORM name="Start">
+		<input type="button" value="Start" onClick="start()">
+	</FORM>
+</body>
+</html>
