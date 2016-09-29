@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title> Labatornaya 2.8 </title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<div style="width:400px;">
+		<form>
+			<input id="scuns" type="number" placeholder="Введите оценки" value="" />
+			<input id="enot" type="button" value="Выполнить" onClick="check()"/>
+		</form>
+		<table style="text-align:center;" border="2" cellpadding="5" cellspacing="2">
+			<caption>Сводка по экзамену</caption>
+			<tr>
+				<td>Оценка</td>
+				<td>Сдавшие</td>
+			</tr>
+			<tr>
+				<td>Отлично</td>
+				<td>
+					<input id="p5" type="text" placeholder="Нет значений" value="" disabled>
+				</td>
+			</tr>
+			<tr>
+				<td>Хорошо</td>
+				<td>
+					<input id="p4" type="text" placeholder="Нет значений" value="" disabled>
+				</td>
+			</tr>
+			<tr>
+				<td>Удов.</td>
+				<td>
+					<input id="p3" type="text" placeholder="Нет значений" value="" disabled>
+				</td>
+			</tr>
+			<tr>
+				<td>Неуд.</td>
+				<td>
+					<input id="p2" type="text" placeholder="Нет значений" value="" disabled>
+				</td>
+			</tr>
+		</table>
+		
+		<p align="center">Дополнительные сведения:</p>
+		<h5>Кол-во сдававших: <input id="stupidStudent" type="text" placeholder="Нет значений" value="" disabled></h5>
+		<h5>Средний балл: <input id="eBal" type="text" placeholder="Нет значений" value="" disabled></h5>
+	</div>
+	<script>
+	var before = "";
+		function check(){
+			var arr = document.getElementById("scuns");
+			if (before == arr.value) return;
+			var r5 = document.getElementById("p5"),
+				r4 = document.getElementById("p4"),
+				r3 = document.getElementById("p3"),
+				r2 = document.getElementById("p2");
+			var sum = 0;
+			
+			r5.value = r4.value = r3.value = r2.value = 0;
+			
+			for(var i = 0; i < arr.value.length; i++){
+				if(arr.value[i] == 5){ r5.value++; sum += 5;}
+				if(arr.value[i] == 4){ r4.value++; sum += 4;}
+				if(arr.value[i] == 3){ r3.value++; sum += 3;}
+				if(arr.value[i] == 2){ r2.value++; sum += 2;}
+			}
+			document.getElementById("stupidStudent").value = arr.value.length;
+			document.getElementById("eBal").value = sum / arr.value.length;
+			before = arr.value;
+		}
+		
+	
+	</script>
+</body>
+</html>
