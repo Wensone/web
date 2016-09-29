@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title> Labatornaya 2.7 </title>
+	<meta charset="windows-1251" />
+</head>
+<body>
+	<form>
+		<input id="special_for_Razinkina" type="text" placeholder="Enter string" value="Yanchik"/>
+		<br />
+		<input type="button" value="Do" onClick="kaka()"/>
+		<input type="button" value="Clear" onClick=document.getElementById("special_for_Tatyana").value="" />
+		<br />
+		<textarea id="special_for_Tatyana" cols="40" rows="40"></textarea>
+	</form>
+	<script>
+	
+		
+	
+		function kaka() {
+			var str = document.all("special_for_Razinkina").value;
+			var area = document.getElementsByTagName('textarea')[0];
+
+
+			if(~str.indexOf(",")){
+				for(var i = 0; i < str.length; i++){
+					if(str[i] == ','){
+						area.value += '\n';
+					} else {
+						area.value += str[i];
+					}
+				}
+			} else {
+				for (var i = 0; i < str.length; i++){
+					area.value += str[i] + "\t" + str[i].charCodeAt();
+					area.value += '\n';
+				}
+			}
+		}
+	</script>
+</body>
+</html>
