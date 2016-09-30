@@ -10,28 +10,32 @@
 		}
 	</script>
 </head>
+
+
 <body>
 	<div>
-		<table id="styleTable" cellspacing="1" border="1" cellpadding="1">
+    <form>
+        <table id="styleTable" cellspacing="1" border="1" cellpadding="1">
 			<tr>
-				<td>Ячейка 1</td>
-				<td>Ячейка 2</td>
+                <td><span>Бордер : </span></td>
+				<td><input name=a type="text" placeholder="Значение" value=""></td>
 			</tr>
 			<tr>
-				<td>Ячейка 3</td>
-				<td>Ячейка 4</td>
-			</tr>
-			<tr>
-				<td colspan="2">Ячейка 522232323</td>
+				<td><span>c-spacing: </span></td>
+                <td>
+                    <input name=b type="text" placeholder="Значение" value="">
+                </td>
+            <tr>
+            	<td><span>c-padding: </span></td>
+                <td>
+                    <input name=c type="text" placeholder="Значение" value="">
+                </td>
 			</tr>
 		</table>
-		
-		<form>
+
+
 			<br>
-			<input type="button" value="Очистить" onClick="prnt(1,1,1)"><br>
-			<span>Бордер : </span><input name=a type="text" placeholder="Значение" value=""><br>
-			<span>c-spacing: </span><input name=b type="text" placeholder="Значение" value=""><br>
-			<span>c-padding: </span><input name=c type="text" placeholder="Значение" value=""><br>
+			<input type="button" value="Очистить" onClick="prnt(1,1,1)">
 			<input type="button" value="Применить" onClick="prnt(a,b,c)">
 		</form>
 	</div>
