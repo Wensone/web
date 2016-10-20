@@ -1,0 +1,61 @@
+<head>
+	<title>Лабораторная 2.3</title>
+	<meta charset="utf-8" />
+	<script>
+		var Num=0;
+
+		function NumImage(Arg){
+			Num=Arg;
+		}
+
+		function Setting(object){
+			object.src="../img/r"+Num+".gif";
+		}
+		function cl() {
+			document.p1.src = "../img/r0.gif";
+			document.p2.src = "../img/r0.gif";
+			document.p3.src = "../img/r0.gif";
+			document.p4.src = "../img/r0.gif";
+		}
+	</script>
+</head>
+
+<body>
+	<img SRC="../img/r1.gif" name="Pic_1" width=90 height=160 border=2 onClick="NumImage(1)">
+	<img SRC="../img/r2.gif" name="Pic_2" width=90 height=160 border=2 onClick="NumImage(2)">
+	<img SRC="../img/r3.gif" name="Pic_3" width=90 height=160 border=2 onClick="NumImage(3)">
+	<img SRC="../img/r4.gif" name="Pic_4" width=90 height=160 border=2 onClick="NumImage(4)">
+
+	<table BORDER=0, CELLSPACING=0, CELLPADDING=0>
+		<tr>
+			<td WIDTH=90 HEIGHT=160>
+                <a href="javascript:void(0)" onMouseOver="window.status='r1.gif';return true">
+                     <img name="p1" title="r1.gif" SRC="../img/r0.gif" onClick="Setting(this)">
+                </a>
+            </td>
+			<td WIDTH=90 HEIGHT=160>
+                <a href="javascript:void(0)" onMouseOver="window.status='r2.gif';return true">
+                    <img name="p2" title="r1.gif" SRC="../img/r0.gif" onClick="Setting(this)">
+                </a>
+            </td>
+		</tr>
+
+		<tr>
+			<td WIDTH=90 HEIGHT=160>
+                <a href="javascript:void(0)" onMouseOver="window.status='r3.gif';return true">
+                    <img name="p3" title="r1.gif" SRC="../img/r0.gif" onClick="Setting(this)">
+                </a>
+            </td>
+			<td WIDTH=90 HEIGHT=160>
+                <a href="javascript:void(0)" onMouseOver="window.status='r4.gif';return true">
+                    <img name="p4" title="r1.gif" SRC="../img/r0.gif" onClick="Setting(this)">
+                </a>
+            </td>
+		</tr>
+		<tr>
+			<td rowspan="2">
+				<input type="button" name="clear_img" value="Clear table" onClick="cl()">
+			</td>
+		</tr>
+	</table>
+</body>
