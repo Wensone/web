@@ -1,0 +1,121 @@
+<html>
+    <HEAD>
+        <TITLE>Лабораторная работа N 2.10</TITLE>
+        <META charset="utf-8">
+    </HEAD>
+    <SCRIPT LANGUAGE="JavaScript">
+
+    function setClock() {
+        var text = ""
+        var openImage = "<IMG SRC=\"" + getPath(location.href) + "lab2.10_files\\dg"
+        var closeImage = ".gif\" HEIGHT=21 WIDTH=16>"
+
+        var now = new Date()
+
+        var hour = now.getHours()
+
+        var minute = now.getMinutes()
+
+        now = null
+
+        var ampm = ""
+        if (hour >= 12) {
+            hour -= 12
+            ampm = "pm"
+        } else
+        ampm = "am"
+        hour = (hour == 0) ? 12 : hour
+
+        if (minute < 10)
+        minute = "0" + minute
+        minute += ""
+        hour += ""
+
+        for (var i = 0; i < hour.length; ++i) {
+            text += openImage + hour.charAt(i) + closeImage
+        }
+        text += openImage + "c.gif\" HEIGHT=21 WIDTH=9>"
+
+        for (var i = 0; i < minute.length; ++i) {
+            text += openImage + minute.charAt(i) + closeImage
+        }
+        text += openImage + ampm + closeImage
+
+        return text
+    }
+
+    function getPath(url) {
+        lastSlash = url.lastIndexOf("/")
+        return url.substring(0, lastSlash + 1)
+    }
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+    function setDate() {
+        var text = ""
+        var openImage = "<IMG SRC=\"" + getPath(location.href) + "lab2.10_files\\dg"
+        var closeImage = ".gif\" HEIGHT=21 WIDTH=16>"
+        var now = new Date()
+        var date = now.getDate()
+        var month = now.getMonth()
+        var year = now.getFullYear()
+        now = null
+
+        month++
+        date += ""
+        month += ""
+        year += ""
+        for (var i = 0; i < date.length; ++i) {
+            text += openImage + date.charAt(i) + closeImage
+        }
+        text += openImage + "p.gif\" HEIGHT=21 WIDTH=9>"
+        for (var i = 0; i < month.length; ++i) {
+            text += openImage + month.charAt(i) + closeImage
+        }
+        text += openImage + "p.gif\" HEIGHT=21 WIDTH=9>"
+
+        for (var i = 0; i < year.length; ++i) {
+            text += openImage + year.charAt(i) + closeImage
+        }
+        return text
+    }
+
+        function getPath(url) {
+            lastSlash = url.lastIndexOf("/")
+            return url.substring(0, lastSlash + 1)
+        }
+
+        function clock_status() {
+            window.setTimeout("clock_status()",1000);
+            today=new Date();
+            self.status=today.toString();
+            var clock = setClock();
+            var date = setDate();
+            if (document.layers) {
+    			 document.layers.time.document.write(clock);
+    			 document.layers.time.document.close();
+                 document.layers.date.document.write(date);
+                 document.layers.date.document.close();
+			}
+			else
+            {
+                document.getElementById("time").innerHTML = clock;
+                document.getElementById("date").innerHTML = date;
+            }
+        }
+    </SCRIPT>
+
+<body>
+<span id="time" style="color:#f8f8ff; font-size: 50px;">
+    Время
+</span>
+<span id="date" style="color:#f8f8ff; font-size: 50px;">
+    Время
+</span>
+    <script>
+    clock_status();
+
+    </script>
+
+</body>
+</html>
