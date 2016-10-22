@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<style type="text/css">
+	* {
+		margin-right: -4px; 
+    	padding: 0;
+    	overflow: hidden;
+	}
+</style>
+<script type="text/javascript">
+var clockImg = [];
+var hour, minute, date, month, year, tmp, am; 
+function init() {
+	for (var i = 0; i < 10; i++)
+		clockImg[i] = document.getElementById("t" + i + "");
+	am = document.getElementById("am");
+}
+
+function updateClock(){
+	var now = new Date();
+	date = now.getDate();
+	month = now.getMonth();
+	year = now.getYear();
+	hour = now.getHours();
+	minute = now.getMinutes();
+	month++;
+	if (hour > 12) {
+		am.src = "dgpm.gif";
+		hour = hour - 12;
+	}
+
+	for (var i = 1; i >= 0; i--){
+		setTimeImg((hour % 10), i);
+		hour = parseInt(hour / 10);
+	}
+
+	for (var i = 3; i >= 2; i--){
+		setTimeImg((minute % 10), i);
+		minute = parseInt(minute / 10);
+	}
+	
+	for (var i = 5; i >= 4; i--){
+		setTimeImg((date % 10), i);
+		date = parseInt(date / 10);
+	}
+
+	for (var i = 7; i >= 6; i--){
+		setTimeImg((month % 10), i);
+		month = parseInt(month / 10);
+	}
+
+	for (var i = 9; i >= 8; i--){
+		setTimeImg((year % 10), i);
+		year = parseInt(year / 10);
+	}
+
+	var timerId = setTimeout(
+	function tick() {
+	  updateClock();
+	  timerId = setTimeout(tick, 100);
+	}, 100);
+}
+
+function setTimeImg(num, index) {
+	switch(num){
+		case 0: clockImg[index].src = "dg"+ 0 +".gif"; break;
+		case 1: clockImg[index].src = "dg"+ 1 +".gif"; break;
+		case 2: clockImg[index].src = "dg"+ 2 +".gif"; break;
+		case 3: clockImg[index].src = "dg"+ 3 +".gif"; break;
+		case 4: clockImg[index].src = "dg"+ 4 +".gif"; break;
+		case 5: clockImg[index].src = "dg"+ 5 +".gif"; break;
+		case 6: clockImg[index].src = "dg"+ 6 +".gif"; break;
+		case 7: clockImg[index].src = "dg"+ 7 +".gif"; break;
+		case 8: clockImg[index].src = "dg"+ 8 +".gif"; break;
+		case 9: clockImg[index].src = "dg"+ 9 +".gif"; break;
+		case 10: clockImg[index].src = "dg"+ 0 +".gif"; break;
+		case 11: clockImg[index].src = "dg"+ 1 +".gif"; break;
+	}
+
+}
+</script>
+</head>
+<body onload="init(); updateClock();">
+	<img src="dg0.gif" id="t0" alt=""/>
+	<img src="dg0.gif" id="t1" alt=""/>
+	<img src="dgc.gif" id="delimiter" alt=""/>
+	<img src="dg0.gif" id="t2" alt=""/>
+	<img src="dg0.gif" id="t3" alt=""/>
+	<img src="dgam.gif" id="am" alt=""/>
+	<br>
+	<img src="dg0.gif" id="t4" alt=""/>
+	<img src="dg0.gif" id="t5" alt=""/>
+	<img src="dgp.gif" id="delimiter" alt=""/>
+	<img src="dg0.gif" id="t6" alt=""/>
+	<img src="dg0.gif" id="t7" alt=""/>
+	<img src="dgp.gif" id="delimiter" alt=""/>
+	<img src="dg0.gif" id="t8" alt=""/>
+	<img src="dg0.gif" id="t9" alt=""/>
+</body>
+</html>
